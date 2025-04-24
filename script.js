@@ -13,7 +13,6 @@ const minCreditScoreForCondo = 680;
 const minIncomeForCar = 30000;
 const minCreditScoreForCar = 650;
 
-displayLoan.innerHTML = `You qualify for a duplex, condo, and car loan.`
 
 
 const checkEligibility = () => {
@@ -23,18 +22,19 @@ const checkEligibility = () => {
     } else {
         errorMsg.style.display = "none"
         if (creditScore.value.trim() >= minCreditScoreForDuplex && annualIncome.value.trim() >= minIncomeForDuplex) {
-            displayLoan.innerHTML = `You qualify for a duplex, condo, and car loan.`
-            displayLoan.style.border = "2px solid red"
-            console.log(" sjfn knw");
-            
+            displayLoan.style.display = "block"
+            displayLoan.innerHTML = `You qualify for a duplex, condo, and car loan.`            
         } else if (annualIncome.value.trim() >= minIncomeForCondo && creditScore.value.trim() >= minCreditScoreForCondo) {
+            displayLoan.style.display = "block"
             displayLoan.innerHTML = `You qualify for a condo, and car loan.`
         } else if (annualIncome.value.trim() >= minIncomeForCar && creditScore.value.trim() >= minCreditScoreForCar) {
+            displayLoan.style.display = "block"
             displayLoan.innerHTML = `You qualify for a car loan.`
         } else {
+            displayLoan.style.display = "block"
             displayLoan.innerHTML = `You don't qualify for any loans.`
         }
     }
-
-    
 }
+
+
